@@ -1,0 +1,30 @@
+<p>Pizza Details: </p>
+<p>Customer name: <%= @pizza.pretty_name%></p>
+<p>Pizza Topping: <%= @pizza.topping%></p>
+<p>Quantity: <%= @pizza.quantity%></p>
+
+<form action= "/pizzas/<%=@pizza.id%>/delete" method="POST">
+  <input type="submit" value="DELETE ORDER">
+</form>
+
+
+<form action="/pizzas/<%=@pizza.id%>/edit" method="GET">
+<label for="first-name-field">First Name:</label>
+<input type="text" id="first-name-field" name= "first_name"/>
+
+<label for="last-name-field">:Last Name:</label>
+<input type="text" id="last-name-field" name="last_name">
+
+<label for="pizza-select">Select your pizza:</label>
+<select id="pizza-select" name="topping">
+  <option value="Margherita">Margherita></option>
+  <option value="Pepperoni">Pepperoni</option>
+</select>
+<label for="quantity">How many do you want to order?</label>
+<input type="number" id="quantity" name="quantity" min=0>
+
+<input type="submit" value="EDIT ORDER">
+</form>
+
+
+
